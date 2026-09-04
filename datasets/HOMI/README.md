@@ -94,8 +94,10 @@ audited.
 
 | File | Contents |
 |---|---|
-| `s8_coco17.json` | YOLOv8n-pose output, 17 COCO keypoints with confidence, per camera frame |
+| `s8_coco17.json` | YOLOv8n-pose output on S8, 17 COCO keypoints with confidence, per camera frame |
 | `s8_3d.npz` | MotionBERT lifting of the above, 17 joints × 3, root-relative |
+| `yolo_skeleton_s7.json` | YOLOv8n-pose on S7, the detection-rate comparison |
+| `mediapipe_purple_crop.json` | MediaPipe on the same S7 crops, for the same comparison |
 | `homi_two_strokes.json` | two 24-step joint-angle profiles used for retargeting |
 
 `s8_coco17.json` marks frames where detection failed with

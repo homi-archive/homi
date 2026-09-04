@@ -27,6 +27,9 @@ dataset directories alongside, or set the paths at the top of each script.
 | `make_fig5_final.py` | `fig5_timeline.pdf` | Fig. 4, gate timeline and track |
 | `make_fig6_final3.py` | `fig6_strokes.png` | Fig. 5, stroke phases |
 | `render_pipeline_final2.py` | robot rendering settings (imported by `make_fig6_final3.py`) | |
+| `position_leakage.py` | `position_leakage_results.json` | Position-leakage figures, Sec. III-D |
+| `intensity_foreground.py` | `intensity_two_populations.npy` | Reflectance figures, Sec. VII-A |
+| `make_gate_video_fin.py` | `gate_v4_S8.mp4` | Supplementary video |
 | `render_pipeline_3panel.py` | `pipeline_S8_3panel.mp4` | Supplementary video |
 
 ## Order
@@ -55,3 +58,18 @@ camera settings are shared. They can also be run directly.
 `annotate_s8.py` shows only video frames. It deliberately does not
 display cluster height, gate output or classifier probability, so that
 annotation stays independent of model behaviour.
+
+## Precomputed results
+
+`results/` holds the JSON output of every script above, so the numbers in
+the paper can be checked without rerunning anything. `gate_final_results.json`
+carries the gate comparison, `duty_sweep_results.json` the full threshold
+sweep, `split_half_results.json` the first-half/second-half check,
+`event_metrics.json` the event-level counts, `ablation_results.json` the
+feature and smoothing ablation, `position_leakage_results.json` the effect
+of adding centroid coordinates, and `loc_groundtruth_s8.json` the 29
+manually checked position intervals.
+
+`intensity_foreground.py` reads rosbag files that are not part of this
+release; its output is included as
+`datasets/HOMI/derived/intensity_two_populations.npy`.

@@ -1,0 +1,18 @@
+{
+ "eval_seconds": 230.7,
+ "dropouts": 10,
+ "dropouts_per_min": 2.6007802340702213,
+ "dropout_median_s": 2.15,
+ "dropout_max_s": 4.1,
+ "dropout_total_s": 22.4,
+ "false_activations": 4,
+ "fa_per_min": 1.0403120936280885,
+ "fa_median_s": 1.65,
+ "fa_max_s": 3.8,
+ "fa_total_s": 7.6,
+ "onset_median_s": 0.0,
+ "onset_max_s": 10.2,
+ "onset_within_2s": 0.8,
+ "release_median_s": 0.0,
+ "release_max_s": 0.4
+}

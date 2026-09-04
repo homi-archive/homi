@@ -1,0 +1,90 @@
+{
+ "rows": [
+  {
+   "features": "shape only (10)",
+   "smoothing": "none",
+   "threshold": 0.39999999999999997,
+   "precision": 78.09820732657833,
+   "recall": 69.8744769874477,
+   "f1": 73.75782112624219,
+   "duty": 55.613350671868226
+  },
+  {
+   "features": "shape only (10)",
+   "smoothing": "2 s causal",
+   "threshold": 0.48499999999999993,
+   "precision": 91.20622568093385,
+   "recall": 81.72942817294282,
+   "f1": 86.20816476645827,
+   "duty": 55.70004334633724
+  },
+  {
+   "features": "motion only (3)",
+   "smoothing": "none",
+   "threshold": 0.40499999999999997,
+   "precision": 64.765625,
+   "recall": 57.810320781032075,
+   "f1": 61.09064112011791,
+   "duty": 55.483311660164716
+  },
+  {
+   "features": "motion only (3)",
+   "smoothing": "2 s causal",
+   "threshold": 0.43499999999999994,
+   "precision": 62.870514820592824,
+   "recall": 56.20641562064156,
+   "f1": 59.35198821796761,
+   "duty": 55.57000433463373
+  },
+  {
+   "features": "shape + motion (13)",
+   "smoothing": "none",
+   "threshold": 0.4649999999999999,
+   "precision": 79.2056074766355,
+   "recall": 70.92050209205021,
+   "f1": 74.83443708609272,
+   "duty": 55.65669700910273
+  },
+  {
+   "features": "shape + motion (13)",
+   "smoothing": "2 s causal",
+   "threshold": 0.5,
+   "precision": 92.61275272161743,
+   "recall": 83.05439330543933,
+   "f1": 87.57352941176471,
+   "duty": 55.74338968357174
+  }
+ ],
+ "activation": {
+  "shape only (10)": {
+   "handweed": 100.0,
+   "homi_work": 79.35483870967742,
+   "other": 34.61538461538461,
+   "squat_moving": 70.0,
+   "squatting": 75.28735632183908,
+   "standing": 15.04424778761062,
+   "walking": 8.214285714285714,
+   "watering": 8.0
+  },
+  "motion only (3)": {
+   "handweed": 96.25,
+   "homi_work": 48.924731182795696,
+   "other": 79.23076923076923,
+   "squat_moving": 43.333333333333336,
+   "squatting": 46.55172413793103,
+   "standing": 46.902654867256636,
+   "walking": 15.357142857142858,
+   "watering": 79.14285714285715
+  },
+  "shape + motion (13)": {
+   "handweed": 100.0,
+   "homi_work": 84.73118279569893,
+   "other": 50.76923076923077,
+   "squat_moving": 42.22222222222222,
+   "squatting": 71.83908045977012,
+   "standing": 8.849557522123893,
+   "walking": 3.214285714285714,
+   "watering": 2.857142857142857
+  }
+ }
+}
