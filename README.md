@@ -1,6 +1,7 @@
-# GroundTruth
+# HOMI
 
-A LiDAR-gated sensing pipeline for capturing manual agricultural work.
+A LiDAR-gated sensing pipeline for capturing manual agricultural work,
+with the dataset it was built on.
 
 A single fixed LiDAR at the edge of a plot decides when a worker is
 engaged in ground work and enables a camera only during those intervals.
@@ -16,7 +17,8 @@ produces every number and figure in the accompanying paper.
 
     datasets/HOMI/     the dataset (see its own README)
     code/              analysis and figure scripts (see code/README.md)
-    docs/              project documentation
+    models/            trained gate model
+    docs/              release notes
 
 ## Quick start
 
@@ -67,13 +69,4 @@ Code: MIT. Datasets: CC BY 4.0.
 
 ## Citation
 
-Paper reference to be added on publication.
-
-## 한글 요약
-
-한 대의 고정 라이다가 농민이 지면 작업 중인지를 판단하고, 그 구간에서만
-카메라를 켭니다. 카메라는 관절 단위 동작을 얻고, 라이다는 그 판단과
-함께 같은 반환에서 밭 안 어느 고랑에서 일이 일어났는지를 얻습니다.
-영상이 존재하는 시간은 세션의 절반 이하이며, 남는 기록은 무엇을 어디서
-했는지입니다. 이 저장소에는 데이터셋과 주석, 그리고 논문의 모든 수치와
-그림을 만드는 코드가 들어 있습니다.
+Reference to be added on publication.
