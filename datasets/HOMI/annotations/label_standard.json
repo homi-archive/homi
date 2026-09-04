@@ -1,0 +1,53 @@
+{
+  "classes": [
+    "standing",
+    "walking",
+    "squatting",
+    "squat_moving",
+    "watering",
+    "homi_work"
+  ],
+  "gt_extra": [
+    "handweed",
+    "other",
+    "stooped_move"
+  ],
+  "ground_work_train": [
+    "homi_work",
+    "squatting",
+    "squat_moving"
+  ],
+  "ground_work_gt": [
+    "homi_work",
+    "handweed",
+    "squatting",
+    "squat_moving",
+    "stooped_move"
+  ],
+  "excluded_from_eval": [],
+  "legacy_map": {
+    "idle": "standing",
+    "walking": "walking",
+    "squat": "squatting",
+    "squatting_moving": "squat_moving",
+    "overhead_motion": "watering",
+    "rhythmic_ground": "homi_work"
+  },
+  "paper_labels": {
+    "standing": "Standing",
+    "walking": "Walking",
+    "squatting": "Squatting",
+    "squat_moving": "Squat-moving",
+    "watering": "Watering",
+    "homi_work": "Ho-Mi work",
+    "handweed": "Hand weeding",
+    "other": "Tool transition",
+    "stooped_move": "Stooped repositioning"
+  },
+  "metrics": {
+    "duty": "fraction of session with camera on",
+    "camera_off": "1 - duty",
+    "recall": "fraction of true work frames captured",
+    "precision": "fraction of camera-on frames that are work"
+  }
+}

@@ -1,0 +1,176 @@
+[
+ {
+  "start": 106,
+  "end": 146,
+  "pred": "F2",
+  "check": 126
+ },
+ {
+  "start": 147,
+  "end": 183,
+  "pred": "F6",
+  "check": 165
+ },
+ {
+  "start": 184,
+  "end": 260,
+  "pred": "F1",
+  "check": 222
+ },
+ {
+  "start": 261,
+  "end": 324,
+  "pred": "F6",
+  "check": 293
+ },
+ {
+  "start": 325,
+  "end": 424,
+  "pred": "F4",
+  "check": 375
+ },
+ {
+  "start": 425,
+  "end": 524,
+  "pred": "F4",
+  "check": 475
+ },
+ {
+  "start": 525,
+  "end": 570,
+  "pred": "F4",
+  "check": 548
+ },
+ {
+  "start": 571,
+  "end": 613,
+  "pred": "F6",
+  "check": 592
+ },
+ {
+  "start": 614,
+  "end": 713,
+  "pred": "F2",
+  "check": 664
+ },
+ {
+  "start": 714,
+  "end": 813,
+  "pred": "F2",
+  "check": 764
+ },
+ {
+  "start": 814,
+  "end": 913,
+  "pred": "F2",
+  "check": 864
+ },
+ {
+  "start": 914,
+  "end": 927,
+  "pred": "F2",
+  "check": 921
+ },
+ {
+  "start": 928,
+  "end": 1027,
+  "pred": "F6",
+  "check": 978
+ },
+ {
+  "start": 1028,
+  "end": 1127,
+  "pred": "F6",
+  "check": 1078
+ },
+ {
+  "start": 1128,
+  "end": 1149,
+  "pred": "F6",
+  "check": 1139
+ },
+ {
+  "start": 1150,
+  "end": 1249,
+  "pred": "F1",
+  "check": 1200
+ },
+ {
+  "start": 1250,
+  "end": 1349,
+  "pred": "F1",
+  "check": 1300
+ },
+ {
+  "start": 1350,
+  "end": 1449,
+  "pred": "F1",
+  "check": 1400
+ },
+ {
+  "start": 1450,
+  "end": 1549,
+  "pred": "F1",
+  "check": 1500
+ },
+ {
+  "start": 1550,
+  "end": 1649,
+  "pred": "F1",
+  "check": 1600
+ },
+ {
+  "start": 1650,
+  "end": 1749,
+  "pred": "F1",
+  "check": 1700
+ },
+ {
+  "start": 1750,
+  "end": 1849,
+  "pred": "F1",
+  "check": 1800
+ },
+ {
+  "start": 1850,
+  "end": 1949,
+  "pred": "F1",
+  "check": 1900
+ },
+ {
+  "start": 1950,
+  "end": 2019,
+  "pred": "F1",
+  "check": 1985
+ },
+ {
+  "start": 2020,
+  "end": 2119,
+  "pred": "F6",
+  "check": 2070
+ },
+ {
+  "start": 2120,
+  "end": 2136,
+  "pred": "F6",
+  "check": 2128
+ },
+ {
+  "start": 2137,
+  "end": 2236,
+  "pred": "F2",
+  "check": 2187
+ },
+ {
+  "start": 2237,
+  "end": 2336,
+  "pred": "F2",
+  "check": 2287
+ },
+ {
+  "start": 2337,
+  "end": 2411,
+  "pred": "F2",
+  "check": 2374
+ }
+]

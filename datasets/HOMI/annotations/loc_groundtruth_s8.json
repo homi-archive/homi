@@ -1,0 +1,276 @@
+{
+ "session": "S8",
+ "annotator": "author, from video",
+ "n_segments": 29,
+ "n_segments_correct": 24,
+ "n_frames": 2306,
+ "n_frames_correct": 2087,
+ "frame_accuracy": 0.9050303555941024,
+ "errors_by_pair": {
+  "F6 -> F1": 159,
+  "F6 -> F2": 60
+ },
+ "segments": [
+  {
+   "start": 106,
+   "end": 146,
+   "frames": 41,
+   "check": 126,
+   "pred": "F2",
+   "truth": "F2",
+   "correct": true
+  },
+  {
+   "start": 147,
+   "end": 183,
+   "frames": 37,
+   "check": 165,
+   "pred": "F6",
+   "truth": "F1",
+   "correct": false
+  },
+  {
+   "start": 184,
+   "end": 260,
+   "frames": 77,
+   "check": 222,
+   "pred": "F1",
+   "truth": "F1",
+   "correct": true
+  },
+  {
+   "start": 261,
+   "end": 324,
+   "frames": 64,
+   "check": 293,
+   "pred": "F6",
+   "truth": "F6",
+   "correct": true
+  },
+  {
+   "start": 325,
+   "end": 424,
+   "frames": 100,
+   "check": 375,
+   "pred": "F4",
+   "truth": "F4",
+   "correct": true
+  },
+  {
+   "start": 425,
+   "end": 524,
+   "frames": 100,
+   "check": 475,
+   "pred": "F4",
+   "truth": "F4",
+   "correct": true
+  },
+  {
+   "start": 525,
+   "end": 570,
+   "frames": 46,
+   "check": 548,
+   "pred": "F4",
+   "truth": "F4",
+   "correct": true
+  },
+  {
+   "start": 571,
+   "end": 613,
+   "frames": 43,
+   "check": 592,
+   "pred": "F6",
+   "truth": "F2",
+   "correct": false
+  },
+  {
+   "start": 614,
+   "end": 713,
+   "frames": 100,
+   "check": 664,
+   "pred": "F2",
+   "truth": "F2",
+   "correct": true
+  },
+  {
+   "start": 714,
+   "end": 813,
+   "frames": 100,
+   "check": 764,
+   "pred": "F2",
+   "truth": "F2",
+   "correct": true
+  },
+  {
+   "start": 814,
+   "end": 913,
+   "frames": 100,
+   "check": 864,
+   "pred": "F2",
+   "truth": "F2",
+   "correct": true
+  },
+  {
+   "start": 914,
+   "end": 927,
+   "frames": 14,
+   "check": 921,
+   "pred": "F2",
+   "truth": "F2",
+   "correct": true
+  },
+  {
+   "start": 928,
+   "end": 1027,
+   "frames": 100,
+   "check": 978,
+   "pred": "F6",
+   "truth": "F6",
+   "correct": true
+  },
+  {
+   "start": 1028,
+   "end": 1127,
+   "frames": 100,
+   "check": 1078,
+   "pred": "F6",
+   "truth": "F1",
+   "correct": false
+  },
+  {
+   "start": 1128,
+   "end": 1149,
+   "frames": 22,
+   "check": 1139,
+   "pred": "F6",
+   "truth": "F1",
+   "correct": false
+  },
+  {
+   "start": 1150,
+   "end": 1249,
+   "frames": 100,
+   "check": 1200,
+   "pred": "F1",
+   "truth": "F1",
+   "correct": true
+  },
+  {
+   "start": 1250,
+   "end": 1349,
+   "frames": 100,
+   "check": 1300,
+   "pred": "F1",
+   "truth": "F1",
+   "correct": true
+  },
+  {
+   "start": 1350,
+   "end": 1449,
+   "frames": 100,
+   "check": 1400,
+   "pred": "F1",
+   "truth": "F1",
+   "correct": true
+  },
+  {
+   "start": 1450,
+   "end": 1549,
+   "frames": 100,
+   "check": 1500,
+   "pred": "F1",
+   "truth": "F1",
+   "correct": true
+  },
+  {
+   "start": 1550,
+   "end": 1649,
+   "frames": 100,
+   "check": 1600,
+   "pred": "F1",
+   "truth": "F1",
+   "correct": true
+  },
+  {
+   "start": 1650,
+   "end": 1749,
+   "frames": 100,
+   "check": 1700,
+   "pred": "F1",
+   "truth": "F1",
+   "correct": true
+  },
+  {
+   "start": 1750,
+   "end": 1849,
+   "frames": 100,
+   "check": 1800,
+   "pred": "F1",
+   "truth": "F1",
+   "correct": true
+  },
+  {
+   "start": 1850,
+   "end": 1949,
+   "frames": 100,
+   "check": 1900,
+   "pred": "F1",
+   "truth": "F1",
+   "correct": true
+  },
+  {
+   "start": 1950,
+   "end": 2019,
+   "frames": 70,
+   "check": 1985,
+   "pred": "F1",
+   "truth": "F1",
+   "correct": true
+  },
+  {
+   "start": 2020,
+   "end": 2119,
+   "frames": 100,
+   "check": 2070,
+   "pred": "F6",
+   "truth": "F6",
+   "correct": true
+  },
+  {
+   "start": 2120,
+   "end": 2136,
+   "frames": 17,
+   "check": 2128,
+   "pred": "F6",
+   "truth": "F2",
+   "correct": false
+  },
+  {
+   "start": 2137,
+   "end": 2236,
+   "frames": 100,
+   "check": 2187,
+   "pred": "F2",
+   "truth": "F2",
+   "correct": true
+  },
+  {
+   "start": 2237,
+   "end": 2336,
+   "frames": 100,
+   "check": 2287,
+   "pred": "F2",
+   "truth": "F2",
+   "correct": true
+  },
+  {
+   "start": 2337,
+   "end": 2411,
+   "frames": 75,
+   "check": 2374,
+   "pred": "F2",
+   "truth": "F2",
+   "correct": true
+  }
+ ]
+}
