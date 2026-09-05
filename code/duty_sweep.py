@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
 """가동률 대비 게이트 성능 곡선. 임계값을 테스트 세션에서 고르지 않았음을 보인다."""
-import sys, os as _os
-sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
-from paths import *
 import numpy as np, json, os, subprocess, shutil
 import matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -10,6 +7,9 @@ import matplotlib.pyplot as plt
 W_SMOOTH  = 24
 N_LIDAR   = 2768
 DUTY_LO, DUTY_HI = 0.30, 0.85     # 곡선을 그릴 가동률 범위
+N_BOOT   = 400                    # RF 곡선의 블록 부트스트랩 반복
+BLOCK    = 24                     # 2 s 블록, 평활 창과 같은 길이
+BAND_FOR = ['Random Forest','LSTM','PointNet']   # 띠를 그릴 모델
 BAND_LO, BAND_HI = 0.40, 0.70     # 본문에서 주장할 구간
 OUT_PNG = 'results_figures/duty_sweep.png'
 OUT_PDF = 'results_figures/duty_sweep.pdf'
@@ -52,7 +52,39 @@ for nm, f, _, _ in MODELS:
     curves[nm] = np.array(rows)
     print(f'  {nm:14s} {len(rows)}점  duty {rows[0][0]*100:.0f}-{rows[-1][0]*100:.0f}%')
 
+# ── RF 곡선의 블록 부트스트랩 구간 ──
+bands={}
+for _bm in ([BAND_FOR] if isinstance(BAND_FOR,str) else BAND_FOR):
+  if _bm in curves:
+    f=dict(MODELS_)[BAND_FOR] if False else None
+    src=[m[1] for m in MODELS if m[0]==_bm][0]
+    s_=causal_mean(np.load(src)[:NF], W_SMOOTH)
+    idxV=np.flatnonzero(V); nn=len(idxV); nb=nn//BLOCK
+    starts=np.arange(0,nn-BLOCK+1)
+    rng=np.random.default_rng(0)
+    ths=curves[_bm][:,4]
+    acc=np.zeros((N_BOOT,len(ths),3))
+    tv=t[idxV]; sv=s_[idxV]
+    for k in range(N_BOOT):
+        st=rng.choice(starts,nb,replace=True)
+        sel=np.concatenate([np.arange(x,x+BLOCK) for x in st])
+        tb,sb=tv[sel],sv[sel]
+        for j,th in enumerate(ths):
+            gb=sb>th
+            tp=int((gb&tb).sum()); fp=int((gb&~tb).sum()); fn=int((~gb&tb).sum())
+            P_=tp/max(tp+fp,1); R_=tp/max(tp+fn,1)
+            acc[k,j]=(gb.mean(), P_, 2*P_*R_/max(P_+R_,1e-9))
+    bands[_bm]=np.percentile(acc,[2.5,97.5],axis=0)
+    print(f'  {_bm} 부트스트랩 띠 완료 ({N_BOOT}회)')
+
 fig, ax = plt.subplots(1, 2, figsize=(9.0, 3.2))
+_C={m[0]:m[2] for m in MODELS}
+for _bm,band in bands.items():
+    q=curves[_bm]; c=_C[_bm]
+    ax[0].fill_between(q[:,0]*100, band[0,:,2]*100, band[1,:,2]*100,
+                       color=c, alpha=.10, lw=0)
+    ax[1].fill_between(q[:,0]*100, band[0,:,1]*100, band[1,:,1]*100,
+                       color=c, alpha=.10, lw=0)
 for nm, _, c, ls in MODELS:
     if nm not in curves: continue
     q = curves[nm]
@@ -110,3 +142,15 @@ print(f'\n저장: {OUT_PNG}, {OUT_PDF}, duty_sweep_results.json')
 V_ = shutil.which('eog') or shutil.which('xdg-open')
 if V_: subprocess.Popen([V_, OUT_PNG],
                         stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+if len(bands)>1:
+    print('\n40-70% 구간에서 RF 밴드와 다른 모델 곡선의 관계')
+    qr=curves['Random Forest']; br=bands['Random Forest']
+    for nm in bands:
+        if nm=='Random Forest': continue
+        q=curves[nm]; ov=0; n=0
+        for i,(d,P,R,F,th) in enumerate(q):
+            if not (0.40<=d<=0.70): continue
+            j=np.argmin(np.abs(qr[:,0]-d)); n+=1
+            if F>=br[0,j,2]: ov+=1
+        if n: print(f'  {nm}: F1 이 RF 95% 하한 위에 있는 비율 {ov/n*100:.0f}%')
